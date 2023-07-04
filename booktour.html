@@ -1,0 +1,146 @@
+<?php
+include('db.php')
+?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+      <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KIGALI HOMES TOUR</title>
+	<!-- Bootstrap Styles-->
+    <link href="assets/css/bootstrap.css" rel="stylesheet" />
+     <!-- FontAwesome Styles-->
+    <link href="assets/css/font-awesome.css" rel="stylesheet" />
+        <!-- Custom Styles-->
+    <link href="assets/css/custom-styles.css" rel="stylesheet" />
+     <!-- Google Fonts-->
+   <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+</head>
+<body>
+    <div id="wrapper">
+        <nav class="navbar-default navbar-side" role="navigation">
+            <div class="sidebar-collapse">
+                <ul class="nav" id="main-menu">
+
+                    <li>
+                        <a  href="kigalitour.php"><i class="fa fa-home"></i> Homepage</a>
+                    </li>
+                    
+					</ul>
+
+            </div>
+
+        </nav>
+       
+        <div id="page-wrapper" >
+            <div id="page-inner">
+			 <div class="row">
+                    <div class="col-md-12">
+                        <h1 class="page-header">
+                            KIGALI HOMES TOUR<small></small>
+                        </h1>
+                    </div>
+                </div> 
+                 
+                                 
+            <div class="row">
+                
+                <div class="col-md-5 col-sm-5">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            BOOK TOUR
+                        </div>
+                        <div class="panel-body">
+						<form name="form" method="post">
+                            <label>Select Location You Need To Visit</label><br>
+            <select name="visit">
+              <option></option>
+              <option>Nyungwe national park</option>
+              <option>Volcanoes national park</option>
+              <option>Akagera national park</option>
+              <option>Kibeho</option>
+              <option>Giswati Mukura national park</option>
+              <option>Huye</option>
+              <option>Rusizi River</option>
+              <option>Nyanza king's palace</option>
+              <option>Musanze</option>
+              <option>Lake Kivu</option>
+              <option>Kigali</option>
+              <option>Mountain Gorilla tracking</option>
+              <option>Golden monkeys</option>
+              <option>Visit of the Tomb of Dian fossey</option>
+              <option>Bisoke</option>
+              <option>Walk in nature</option>
+              <option>Muhabura</option>
+              <option>Gahinga</option>
+              <option>Karisimbi</option>
+              <option>Muhabura gahinga</option>
+              <option>Sabyinyo</option>
+              <option>Buhanga ecological park</option>
+              <option>Picnic including camping for day</option>
+              <option>Caves</option>
+              <option>City tour</option>
+
+
+            </select><br><br>
+              
+              <input type="number" class="form-control" placeholder="Number Of Peaple" name="number" required><br>
+              <label>Arrivals:</label>
+              <input type="date" class="form-control" name="date" placeholder="Arrivals" required><br>
+              <label>Leaving:</label>
+              <input type="date" class="form-control" name="dte" placeholder="Leaving" required><br>
+             
+              <?php
+
+                $countries = array("Afghanistan", "Albania", "Algeria", "American Samoa", "Andorra", "Angola", "Anguilla", "Antarctica", "Antigua and Barbuda", "Argentina", "Armenia", "Aruba", "Australia", "Austria", "Azerbaijan", "Bahamas", "Bahrain", "Bangladesh", "Barbados", "Belarus", "Belgium", "Belize", "Benin", "Bermuda", "Bhutan", "Bolivia", "Bosnia and Herzegowina", "Botswana", "Bouvet Island", "Brazil", "British Indian Ocean Territory", "Brunei Darussalam", "Bulgaria", "Burkina Faso", "Burundi", "Cambodia", "Cameroon", "Canada", "Cape Verde", "Cayman Islands", "Central African Republic", "Chad", "Chile", "China", "Christmas Island", "Cocos (Keeling) Islands", "Colombia", "Comoros", "Congo", "Congo, the Democratic Republic of the", "Cook Islands", "Costa Rica", "Cote d'Ivoire", "Croatia (Hrvatska)", "Cuba", "Cyprus", "Czech Republic", "Denmark", "Djibouti", "Dominica", "Dominican Republic", "East Timor", "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea", "Eritrea", "Estonia", "Ethiopia", "Falkland Islands (Malvinas)", "Faroe Islands", "Fiji", "Finland", "France", "France Metropolitan", "French Guiana", "French Polynesia", "French Southern Territories", "Gabon", "Gambia", "Georgia", "Germany", "Ghana", "Gibraltar", "Greece", "Greenland", "Grenada", "Guadeloupe", "Guam", "Guatemala", "Guinea", "Guinea-Bissau", "Guyana", "Haiti", "Heard and Mc Donald Islands", "Holy See (Vatican City State)", "Honduras", "Hong Kong", "Hungary", "Iceland", "India", "Indonesia", "Iran (Islamic Republic of)", "Iraq", "Ireland", "Israel", "Italy", "Jamaica", "Japan", "Jordan", "Kazakhstan", "Kenya", "Kiribati", "Korea, Democratic People's Republic of", "Korea, Republic of", "Kuwait", "Kyrgyzstan", "Lao, People's Democratic Republic", "Latvia", "Lebanon", "Lesotho", "Liberia", "Libyan Arab Jamahiriya", "Liechtenstein", "Lithuania", "Luxembourg", "Macau", "Macedonia, The Former Yugoslav Republic of", "Madagascar", "Malawi", "Malaysia", "Maldives", "Mali", "Malta", "Marshall Islands", "Martinique", "Mauritania", "Mauritius", "Mayotte", "Mexico", "Micronesia, Federated States of", "Moldova, Republic of", "Monaco", "Mongolia", "Montserrat", "Morocco", "Mozambique", "Myanmar", "Namibia", "Nauru", "Nepal", "Netherlands", "Netherlands Antilles", "New Caledonia", "New Zealand", "Nicaragua", "Niger", "Nigeria", "Niue", "Norfolk Island", "Northern Mariana Islands", "Norway", "Oman", "Pakistan", "Palau", "Panama", "Papua New Guinea", "Paraguay", "Peru", "Philippines", "Pitcairn", "Poland", "Portugal", "Puerto Rico", "Qatar", "Reunion", "Romania", "Russian Federation", "Rwanda", "Saint Kitts and Nevis", "Saint Lucia", "Saint Vincent and the Grenadines", "Samoa", "San Marino", "Sao Tome and Principe", "Saudi Arabia", "Senegal", "Seychelles", "Sierra Leone", "Singapore", "Slovakia (Slovak Republic)", "Slovenia", "Solomon Islands", "Somalia", "South Africa", "South Georgia and the South Sandwich Islands", "Spain", "Sri Lanka", "St. Helena", "St. Pierre and Miquelon", "Sudan", "Suriname", "Svalbard and Jan Mayen Islands", "Swaziland", "Sweden", "Switzerland", "Syrian Arab Republic", "Taiwan, Province of China", "Tajikistan", "Tanzania, United Republic of", "Thailand", "Togo", "Tokelau", "Tonga", "Trinidad and Tobago", "Tunisia", "Turkey", "Turkmenistan", "Turks and Caicos Islands", "Tuvalu", "Uganda", "Ukraine", "United Arab Emirates", "United Kingdom", "United States", "United States Minor Outlying Islands", "Uruguay", "Uzbekistan", "Vanuatu", "Venezuela", "Vietnam", "Virgin Islands (British)", "Virgin Islands (U.S.)", "Wallis and Futuna Islands", "Western Sahara", "Yemen", "Yugoslavia", "Zambia", "Zimbabwe");
+
+                ?>
+                <div class="form-group">
+                                            <label>Name Of Country*</label>
+                                            <select name="country" class="form-control" required>
+                        <option value selected ></option>
+                                                <?php
+                        foreach($countries as $key => $value):
+                        echo '<option value="'.$value.'">'.$value.'</option>'; //close your tags!!
+                        endforeach;
+                        ?>
+                                            </select>
+                </div><br>
+            <label>Names:</label>
+            <input type="txt" name="name" placeholder="Enter Your Names"><br><br>
+            <label>PASSPORT ID:</label>
+            <input type="number" name="number" placeholder="Enter Your Passportid"><br><br>
+              <input type="submit" value="Book Now" class="submit" name="send" required>
+               <?php
+$con=mysqli_connect("localhost","root","","hotel");
+if (isset($_POST['send'])) {
+  $a=$_POST['visit'];
+  $b=$_POST['number'];
+  $c=$_POST['date'];
+  $d=$_POST['dte'];
+  $e=$_POST['country'];
+  $f=$_POST['name'];
+  $g=$_POST['number'];
+  $sql="INSERT INTO booktour(locvisit,npeaple,arrivals,leaving,namecountry,names,passportno) VALUES('$a','$b','$c','$d','$e','$f','$g')";
+  $yes=mysqli_query($con,$sql);
+  if ($yes) {
+      echo "<script type='text/javascript'> alert('Your Booking application has been sent')</script>";
+    }  
+}
+
+
+    ?>
+
+
+            </form>
+    <script src="assets/js/jquery-1.10.2.js"></script>
+      <!-- Bootstrap Js -->
+    <script src="assets/js/bootstrap.min.js"></script>
+    <!-- Metis Menu Js -->
+    <script src="assets/js/jquery.metisMenu.js"></script>
+      <!-- Custom Js -->
+    <script src="assets/js/custom-scripts.js"></script>
+    
+   
+</body>
+</html>

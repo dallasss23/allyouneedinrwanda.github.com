@@ -1,0 +1,193 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ALL YOU NEED IN RWANDA </title>
+    <link rel="stylesheet" href="index.css" />
+    <meta name="viewport" content="width =device-width, initial-scale=1" />
+  </head>
+  <body>
+    <header>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="#">Order</a></li>
+        <li><a href="#">Gallery</a></li>
+        <li><a href="#">Contact Us</a></li>
+
+        
+        
+        <?php
+         session_start();
+        //  if($_SESSION["user"]){
+           ?>
+        <li><a href="#">All order</a></li>
+        <li><a href="#">All Questions</a></li>
+        <?php
+        //  }
+        ?>
+      </ul>
+      <ul>
+
+       <?php
+            if($_SESSION["user"]) {
+            ?>
+              <li>
+          <a href="##"><?php
+          echo $_SESSION["user"];  ?>
+        </a>
+        </li>
+              <li><a  href="#" class="logout" >Logout</a> </li>
+            <?php 
+            }
+            else
+            {
+            ?>
+              <li><a href="#">Login</a></li>
+              <li><a href="#">Register</a></li>
+              <?php
+            }
+            ?>
+       
+      </ul>
+    </header>
+    <section id="banner">
+      <div class="banner-text">
+        <h1><i>ALL YOU NEED IN RWANDA </i></h1>
+
+        <div class="banner-btn">
+          <a href="#service"><span></span>Find Out</a>
+          <a href="#footer"><span></span>Read More</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="features">
+      <div class="title-text">
+        <p>FEATURES</p>
+        <h1>WHY YOU CHOOSE US</h1>
+      </div>
+      <div class="feature-box">
+        <div class="features">
+          <h1>Affordable cost</h1>
+          <div class="features-desc">
+            <div class="features-icon">
+              <i class="fa fa-inr"></i>
+            </div>
+            <div class="features-text">
+              <p>
+                that it is a family in KIGALI,RWANDA that helps you have a good rest and calm in that way, so we have provided you with various services including tour&travel, restaurant services, book room services and etc. welcome to KIGALI.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="features-img">
+          <img src="images/kk.jpg" />
+        </div>
+      </div>
+
+    </section>
+      <div class="title-text">
+      </div>
+      <div class="feature-box">
+        <div class="features">
+          <div class="features-desc">
+            <div class="features-icon">
+              <i class="fa fa-inr"></i>
+            </div>
+            <div class="features-text">
+              <p>
+                Everything You wanted you got when You came to Rwanda, especially where You rested, the way was taken care of, You didn't find anywhere else as good as what You got in Kigali Homes Rwanda. You are also welcome in Kigali Homes Rwanda.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="features-img">
+          <img src="images/aka.jfif" />
+        </div>
+      </div>
+      
+    </section>
+    <!-- service -->
+
+    <section id="service">
+      <div class="title-text">
+        <p>SERVICES</p>
+        <h1>WE PROVIDE BETTER</h1>
+      </div>
+      <div class="service-box">
+        <div class="single-service">
+          <img src="images/tour.jpg" />
+          <div class="overjohn"></div>
+          <div class="service-desc">
+            <h1><a href="www.visitrwanda.com">TOUR OPERATION</a></h1>
+            <hr />
+            <p>
+              If you need tour operation information services, you can visit our page and choose the places to visit and the fees easily by clicking here and choose the right place.
+            </p>
+          </div>
+        </div>
+        <div class="single-service">
+          <img src="images/bed.jpg" />
+          <div class="overjohn"></div>
+          <div class="service-desc">
+            <h1><a href="https://allyouneedinrwanda.netlify.app">BOOKING SERVICES</a></h1>
+            <hr />
+            <p>Booking Apartment Now For Easy.</p>
+          </div>
+        </div>
+        <div class="single-service">
+          <img src="images/vol.jpg" />
+          <div class="overjohn"></div>
+          <div class="service-desc">
+            <h1>VOLCANO TOUR</h1>
+            <hr />
+            <p>
+              This Is The Mount Gorilla, Home Of Gorilla Visit This Place Because It's Amazing.
+            </p>
+          </div>
+        </div>
+        <div class="single-service">
+          <img src="images/huye1.jfif" />
+          <div class="overjohn"></div>
+          <div class="service-desc">
+            <h1>HUYE STADIUM</h1>
+            <hr />
+            <p>
+              This Is The International Stadium Of Huye Help Of The Team To Carfying In Any Award.
+            </p>
+          </div>
+        </div>
+      </div>
+      
+    </section>
+
+    <!-- foooter -->
+
+    <section id="footer">
+      <div class="title-text">
+        <p>CONTACT</p>
+        <h1>VISIT RWANDA TODAY</h1>
+      </div>
+
+      <div class="footer-row">
+        <div class="footer-left">
+          <h1>Opening hours</h1>
+          <p><i class="fa fa-clock-o"> </i>monday to sunday 24hrs</p>
+        </div>
+        <div class="footer-right">
+          <h1>Get in touch</h1>
+          <p> kigali City, KK624 KICUKIRO  <i class="fa fa-map-marker"></i></p>
+          <p>katabogamasixdollas@gmail.com <i class="fa fa-paper-plane"></i></p>
+          <p>+250783560089 <i class="fa fa-phone"></i></p>
+        </div>
+      </div>
+
+      <div class="sociol-media">
+        <p>copyright by &copy;ALL YOU NEED RWANDA TEAM(DEVELOPER)</p>
+      </div>
+    </section>
+  </body>
+</html>
